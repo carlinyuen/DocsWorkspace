@@ -20,7 +20,9 @@
     "https://*/*",
     "history",
     "management",
-    "webNavigation"
+    "webNavigation",
+    "webRequest",
+    "<all_urls>"
   ],
   "content_scripts": [
     {
