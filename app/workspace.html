@@ -5,14 +5,22 @@
     <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
     <link href="vendor/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
   <body>
-    <iframe id="panel1"></iframe>
+    <div class="placeholder empty">
+      <label class="label" for="dropbox">Drag'n'drop a URL</label>
+      <textarea class="dropbox" name="dropbox"></textarea>
+    </div>
+
+    <div class="content"></div>
+
+    <div class="footer"></div>
 
     <!-- build:js scripts/vendor.js -->
     <script src="vendor/jquery-2.1.0.min.js"></script>
-    <script src="vendor/jquery-ui-1.11.4.custom/jquery-ui.min"></script>
+    <script src="vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
     <!-- bower:js -->
     <!-- endbower -->
     <!-- endbuild -->

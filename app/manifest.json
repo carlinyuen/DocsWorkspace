@@ -22,7 +22,9 @@
     "management",
     "webNavigation",
     "webRequest",
-    "<all_urls>"
+    "webRequestBlocking",
+    "<all_urls>",
+    "storage"
   ],
   "content_scripts": [
     {
@@ -37,6 +39,9 @@
       "all_frames": false
     }
   ],
+  "chrome_url_overrides" : {
+    "newtab": "workspace.html"
+  },
   "omnibox": {
     "keyword": "OMNIBOX-KEYWORD"
   },

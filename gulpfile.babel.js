@@ -53,7 +53,7 @@ gulp.task('html',  () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.sourcemaps.init())
-    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if(/^((?!(\.min)).)*\.js$/, $.uglify()))
     .pipe($.if('*.css', $.cleanCss({compatibility: '*'})))
     .pipe($.sourcemaps.write())
     .pipe($.if('*.html', $.htmlmin({removeComments: true, collapseWhitespace: true})))
@@ -72,9 +72,9 @@ gulp.task('chromeManifest', () => {
       }
   }))
   .pipe($.if('*.css', $.cleanCss({compatibility: '*'})))
-  .pipe($.if('*.js', $.sourcemaps.init()))
-  .pipe($.if('*.js', $.uglify()))
-  .pipe($.if('*.js', $.sourcemaps.write('.')))
+  .pipe($.if(/^((?!(\.min)).)*\.js$/, $.sourcemaps.init()))
+  .pipe($.if(/^((?!(\.min)).)*\.js$/, $.uglify()))
+  .pipe($.if(/^((?!(\.min)).)*\.js$/, $.sourcemaps.write('.')))
   .pipe(gulp.dest('dist'));
 });
 
